@@ -1,1 +1,32 @@
-Primer cambio Bloinx-mobile-v1
+Instrucciones para poder levantar el proyecto
+
+Requerimientos
+
+Es necesario tener instalado:
+
+node en su version 14.16.0 en adelante
+android studio
+visual studio code (Si se requiere editar el codigo o cualquier editor de codigo, recomendable visual studio)
+emulador fisico o crearlo desde android studio uno virtual
+
+
+
+Pasos a seguir:
+
+-Para poder visualizar el proyecto, abra su emulador o conecte su celular (depurado) a la computadora.
+
+-Abra una consola de su computadora.
+
+-Posicionate dentro del carpeta donde esta tu proyecto (ejemplo: cd C:\Users\UserName\Desktop\bloinx-mobilev1
+
+-Estando dentro coloca el siguiente comando "npm install" para descargar las dependencias del proyeto (Tarda dependiendo del internet)
+
+-Una vez terminado limpia cache con el siguiente comando "npx react-native start --reset-cache --port=8080" presiona enter,
+	espera unos minutos y cuando te de las opciones presiona la tecla "r" y deten el proceso con las teclas Ctrl+C
+
+-Listo ahora solo coloca el comando "npx react-native run-android" para correrlo en un dispositivo android
+
+(Espera algunos minutos, al ser la primera vez que se levanta tardara un poco, despues de la primeravez tardara menos)
+
+Se abrira otra consola aparte de la que ya tienes levantada (consola metro) esto con la intencion de que si tienes algun problema, en esta nueva consola
+presionando la tecla "r" puedas reiniciar la app
