@@ -49,7 +49,7 @@ export const InvitaAmigos = () =>  {
         <View style={{flex:1}}>
              <ScrollView nestedScrollEnabled={true} style={{backgroundColor:'black', flex:1}}>
                 <View style={[styles.fondo, stylesMyRounds.ContainerRounds]}>
-                    <Image style={{width:'100%', marginTop:10, marginBottom:33, height:54}}
+                    <Image style={{ marginTop:10, marginBottom:33,}}
                         source={require('../../../images/stepper.png')} //Change your icon image here
                     />
                     <Text style={styles.textTitlePage}>Invita a tus amigos</Text>

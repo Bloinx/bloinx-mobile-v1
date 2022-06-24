@@ -141,6 +141,7 @@ export const EditarPerfil = () =>  {
                             }}
                         />
                     </View>
+                    <View style={{marginBottom:70}}></View>
                     </ScrollView>
                 </View>
                 <View style={[stylesInicioSesion.contenedorButton, stylesInicioSesion.contenedorButtonPositionAB]}>

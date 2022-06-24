@@ -21,6 +21,8 @@ export const InicioSession = ({ navigation }: Props) =>  {
     const  siguienteMisRondas = (tipo:String) => {
         console.log('voy a misrondas',tipo);
         navigation.navigate('MisRondas');
+        onChangeTextPassowrd('');
+        onChangeText('');
         stateMuestraWallet(false);
     };
 

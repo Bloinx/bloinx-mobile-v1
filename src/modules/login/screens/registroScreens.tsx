@@ -21,8 +21,8 @@ export const Registro = ({ navigation }: Props) =>  {
     }
     
     return(
-        <ScrollView >
-            <View style={{flex:1}}> 
+        <View style={{flex:1}}> 
+            <ScrollView style={{flex:1}}>
                 <HeaderRegIni title="Registro"/>
                 <View style= {{padding:24}}>
                     <View>
@@ -102,8 +102,8 @@ export const Registro = ({ navigation }: Props) =>  {
                         Siguiente</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     );
 }
 

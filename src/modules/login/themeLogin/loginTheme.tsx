@@ -13,6 +13,7 @@ export const stylesHeaderInicioSesion = StyleSheet.create({
     imageLogo : {
         width: 147,
         height: 64,
+        
     },
     lineaVertical : {
         height: 40,
@@ -23,7 +24,6 @@ export const stylesHeaderInicioSesion = StyleSheet.create({
         marginBottom: 24,
     },
     textoIS : {
-        left: '70%',
         fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: '400',
@@ -205,7 +205,7 @@ export const stylesInicioSesion = StyleSheet.create({
         flexDirection: 'row',
         height: '100%',
         width: '100%',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
     },
     buttonCheck: {
         marginTop: 26,
