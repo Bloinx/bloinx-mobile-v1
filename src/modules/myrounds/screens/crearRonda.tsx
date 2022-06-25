@@ -17,6 +17,7 @@ export const CrearRondas = () =>  {
     const [btnIncrementaDos, stateIncrementaDos] = useState(false);
     const [btnIncrementaTres, stateIncrementaTres] = useState(false);
     const [btnIncrementaCuatro, stateIncrementaCuatro] = useState(false);
+    const [btnIncrementaCinco, stateIncrementaCinco] = useState(false);
     const [optionSelect, stateoptionSelect] = useState('Semanal');
     const [btnDisabled, /*statebtnDisabled*/] = useState(false);
 
@@ -42,11 +43,12 @@ export const CrearRondas = () =>  {
     }
 
     const paginator = () => {
-        var arrayInicial= ['3','4','5','6','7','8'];
-        var arraySecuencialUno= ['4','5','6','7','8','9'];
-        var arraySecuencialDos= ['5','6','7','8','9','10'];
-        var arraySecuencialTres= ['6','7','8','9','10','11'];
-        var arraySecuencialCuatro= ['7','8','9','10','11','12'];
+        var arrayInicial= ['3','4','5','6','7'];
+        var arraySecuencialUno= ['4','5','6','7','8'];
+        var arraySecuencialDos= ['5','6','7','8','9'];
+        var arraySecuencialTres= ['6','7','8','9','10'];
+        var arraySecuencialCuatro= ['7','8','9','10','11'];
+        var arrayInicialCinco= ['8','9','10','11','12'];
         
 
         return (
@@ -90,8 +92,15 @@ export const CrearRondas = () =>  {
                     ]} onPress={() => {numeroSeleccionado(buttonInfo)}}>
                     <Text style={stylesMyRounds.textbtnPaginador}>{buttonInfo}</Text>
                 </TouchableOpacity>
-                )):null
-            
+                )):btnIncrementaCinco ?
+
+                arrayInicialCinco.map(buttonInfo => (
+                    <TouchableOpacity key={buttonInfo} style={[stylesMyRounds.btnPaginadorNumero,
+                        (id === buttonInfo) ? stylesMyRounds.btnPaginadorNumeroActivo : stylesMyRounds.btnPaginadorNumeroInactivo
+                        ]} onPress={() => {numeroSeleccionado(buttonInfo)}}>
+                        <Text style={stylesMyRounds.textbtnPaginador}>{buttonInfo}</Text>
+                    </TouchableOpacity>
+                )) : null
         );
     }
 
@@ -103,6 +112,7 @@ export const CrearRondas = () =>  {
                 console.log('avanza',contador);
             break;
             case 'retrocede':
+                console.log('retrocede',contador);
                 statecontador(contador-1);
                 console.log('retrocede',contador);
             break;
@@ -119,6 +129,7 @@ export const CrearRondas = () =>  {
                 stateIncrementaDos(false);
                 stateIncrementaTres(false);
                 stateIncrementaCuatro(false);
+                stateIncrementaCinco(false);
             break;
             case 2:
                 statebtnInicial(true);
@@ -126,6 +137,7 @@ export const CrearRondas = () =>  {
                 stateIncrementaDos(true);
                 stateIncrementaTres(false);
                 stateIncrementaCuatro(false);
+                stateIncrementaCinco(false);
             break;
             case 3:
                 statebtnInicial(true);
@@ -133,6 +145,7 @@ export const CrearRondas = () =>  {
                 stateIncrementaDos(false);
                 stateIncrementaTres(true);
                 stateIncrementaCuatro(false);
+                stateIncrementaCinco(false);
             break;
     
             case 4:
@@ -141,7 +154,17 @@ export const CrearRondas = () =>  {
                 stateIncrementaDos(false);
                 stateIncrementaTres(false);
                 stateIncrementaCuatro(true);
-                statecontador(3);
+                stateIncrementaCinco(false);
+            break;
+
+            case 5:
+                statebtnInicial(true);
+                stateIncrementaUno(false);
+                stateIncrementaDos(false);
+                stateIncrementaTres(false);
+                stateIncrementaCuatro(false);
+                stateIncrementaCinco(true);
+                statecontador(4);
             break;
 
             case 0:
@@ -179,7 +202,7 @@ export const CrearRondas = () =>  {
                     
                     {paginator()}
 
-                    { (!btnInicial || btnIncrementaUno || btnIncrementaDos || btnIncrementaTres || !btnIncrementaCuatro ) ?
+                    { (!btnInicial || btnIncrementaUno || btnIncrementaDos || btnIncrementaTres || btnIncrementaCuatro || !btnIncrementaCinco) ?
                         <TouchableOpacity  style={[stylesMyRounds.btnPaginadorNumero,
                             stylesMyRounds.btnPaginadorNumeroInactivo
                             ]} onPress={() => {accionAvanzaRetrocede('avanza')}}>

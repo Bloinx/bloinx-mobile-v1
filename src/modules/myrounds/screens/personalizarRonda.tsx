@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { styles } from '../../../theme/appTheme';
 import { stylesMyRounds } from '../themeMyrounds/myroundsStyles';
@@ -11,34 +11,36 @@ interface parametros  {
 
 export const PersonalizarRondas = (
     {
-    numParticipantes, 
-    outstatenombreRonda,
-    nombreRonda, 
-    outstatemotivoRonda, 
-    outstateturno,
-} ) =>  {
-    const tipoRonda = ["Negocio", "Negocio", "Negocio", "Negocio"];
-    const arrayInicial = [];
+        numParticipantes, 
+        outstatenombreRonda,
+        nombreRonda, 
+        outstatemotivoRonda, 
+        outstateturno,
+    } ) =>  {
+
     const arraySecuencial = [];
+    const arrayInicial = [];
+    const tipoRonda = ["Negocio", "Negocio", "Negocio", "Negocio"];
     const [id, stateid] = useState(0);
-
+    
     console.log('jnjsdsdsdn',numParticipantes,nombreRonda);
-
+    
     if(Number(numParticipantes)>0 && Number(numParticipantes)<=6){
-       for (let index = 1; index <= Number(numParticipantes); index++) {
+        for (let index = 1; index <= Number(numParticipantes); index++) {
             arrayInicial.push(index);
-       }
-       console.log(arrayInicial);
+        }
+        console.log(arrayInicial);
     }else if(Number(numParticipantes)>6 && Number(numParticipantes)<=12){
         for (let index = 1; index <= 6; index++) {
             arrayInicial.push(index);
-       }
+        }
         for (let index = 7; index <= Number(numParticipantes); index++) {
             arraySecuencial.push(index);
         }
         console.log(arraySecuencial);
-     }
+    }
 
+    
 
     const numeroSeleccionado = (numero:number) => {
         console.log(numero);
@@ -65,7 +67,6 @@ export const PersonalizarRondas = (
                             buttonStyle= {stylesSelect.inputSelect}
                             buttonTextStyle = {stylesSelect.letraSelect}
                             data={tipoRonda}
-                            dropdownIconPosition= 'right'
                             disableAutoScroll={false}
                             onSelect={(selectedItem, index) => {
                                 console.log(selectedItem,index,'aqui');
@@ -78,7 +79,7 @@ export const PersonalizarRondas = (
                             }}
                             rowTextForSelection={(item, index) => {
                                 console.log('itemss',item,index);
-                                outstatemotivoRonda(item);
+                              //  outstatemotivoRonda(item);
                                 // text represented for each item in dropdown
                                 // if data array is an array of objects then return item.property to represent item in dropdown
                                 return item;
